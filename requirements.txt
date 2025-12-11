@@ -13,3 +13,5 @@ torch==2.1.0
 tqdm==4.66.1
 schedule==1.2.0
 google-play-scraper==1.2.1
+streamlit==1.51.0
+plotly==5.25.0
