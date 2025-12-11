@@ -1,0 +1,20 @@
+To: product-team@groww.in
+Subject: Weekly Groww Product Pulse Report - 2025-12-11
+Date: 2025-12-11 10:57:53
+
+Subject: Weekly Groww Product Pulse Report - 2025-12-11
+
+Hello Team,
+
+Please find attached the weekly pulse report for Groww product reviews.
+
+This report summarizes:
+- Top 3 themes from customer reviews
+- Key customer quotes
+- Actionable insights
+
+Best regards,
+Groww Product Analytics
+
+
+Attachment: weekly_pulse_20251211.md
