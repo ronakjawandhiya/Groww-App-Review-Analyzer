@@ -134,23 +134,37 @@ def main():
     }
     
     .metric-card {
-        background: white;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        background: linear-gradient(135deg, #ffffff, #f8f9fa);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         text-align: center;
-        height: 120px;
+        height: 150px;
+        border: 1px solid #e9ecef;
+        transition: transform 0.3s ease;
+    }
+    
+    .metric-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    
+    .metric-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
     }
     
     .metric-value {
         font-size: 2.5rem;
         font-weight: bold;
         color: #00d09c;
+        margin: 10px 0;
     }
     
     .metric-label {
         font-size: 1rem;
         color: #666;
+        font-weight: 500;
     }
     
     .theme-card {
@@ -246,27 +260,36 @@ def main():
             theme = review['theme']
             theme_counts[theme] = theme_counts.get(theme, 0) + 1
     
-    # Key metrics with investment styling
+    # Enhanced key metrics with icons and better styling
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-        st.markdown('<div class="metric-value">{}</div>'.format(len(reviews)), unsafe_allow_html=True)
-        st.markdown('<div class="metric-label">Reviews Analyzed</div>', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="metric-card">
+            <div class="metric-icon">📋</div>
+            <div class="metric-value">{}</div>
+            <div class="metric-label">Reviews Analyzed</div>
+        </div>
+        """.format(len(reviews)), unsafe_allow_html=True)
     
     with col2:
-        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
-        st.markdown('<div class="metric-value">{}</div>'.format(len(theme_counts)), unsafe_allow_html=True)
-        st.markdown('<div class="metric-label">Business Themes</div>', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="metric-card">
+            <div class="metric-icon">🏷️</div>
+            <div class="metric-value">{}</div>
+            <div class="metric-label">Business Themes</div>
+        </div>
+        """.format(len(theme_counts)), unsafe_allow_html=True)
     
     with col3:
-        st.markdown('<div class="metric-card">', unsafe_allow_html=True)
         avg_rating = sum([r['rating'] for r in reviews]) / len(reviews) if reviews else 0
-        st.markdown('<div class="metric-value">{:.1f}</div>'.format(avg_rating), unsafe_allow_html=True)
-        st.markdown('<div class="metric-label">Average Rating</div>', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+        st.markdown("""
+        <div class="metric-card">
+            <div class="metric-icon">⭐</div>
+            <div class="metric-value">{:.1f}</div>
+            <div class="metric-label">Average Rating</div>
+        </div>
+        """.format(avg_rating), unsafe_allow_html=True)
     
     st.markdown("---")
     
