@@ -158,7 +158,7 @@ def main():
             color_discrete_sequence=px.colors.qualitative.Set3
         )
         fig.update_layout(showlegend=False)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
     
     # Pulse report sections
     st.subheader("Weekly Pulse Report Insights")
